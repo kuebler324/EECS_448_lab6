@@ -3,7 +3,7 @@ const $ = a => document.getElementById(a);
 
 function validateNumber(value, min, max) {
   const num = Number(value);
-  return value !== '' && !isNaN(num) && num >= min && num <= max && num % 1 === num;
+  return value !== '' && !isNaN(num) && num >= min && num <= max && num % 1 === 0;
 }
 function validateString(value, min, max) {
   const { length } = value;
@@ -12,13 +12,13 @@ function validateString(value, min, max) {
 
 function submit(e) {
   const errors = [];
-  if(!validateNumber($('item-a').value, 0, 100)) {
+  if(!validateNumber($('item-a').value, 0, Infinity)) {
    errors.push('Milk quantity field is invalid. It must be a positive whole number.');
   }
-  if(!validateNumber($('item-b').value, 0, 100)) {
+  if(!validateNumber($('item-b').value, 0, Infinity)) {
    errors.push('Chocolate milk quantity field is invalid. It must be a positive whole number.');
   }
-  if(!validateNumber($('item-c').value, 0, 100)) {
+  if(!validateNumber($('item-c').value, 0, Infinity)) {
    errors.push('Cow quantity field is invalid. It must be a positive whole number.');
   }
   if(!$('username').value.match(/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/)) {
