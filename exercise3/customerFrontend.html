@@ -1,1 +1,64 @@
-
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Exercise 3 | Store</title>
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <script src="formChecker.js"></script>
+    </head>
+    <body>
+        <form id="form" action="customerBackend.php" method="post">
+            <h1>Store</h1>
+            <div id="store">
+                <div class="card">
+                    <div class="image-container">
+                      <img src="images/milk.png">
+                    </div>
+                    <h3>Milk</h3>
+                    <p>$4.99</p>
+                    <label for="item-a">Quantity</label>
+                    <input id="item-a" name="item-a" type="number" value="0">
+                </div>
+                <div class="card">
+                    <div class="image-container">
+                      <img src="images/chocolate-milk.png">
+                    </div>
+                    <h3>Chocolate Milk</h3>
+                    <p>$7.99</p>
+                    <label for="item-b">Quantity</label>
+                    <input id="item-b" name="item-b" type="number" value="0">
+                </div>
+                <div class="card">
+                    <div class="image-container">
+                      <img src="images/cow.png">
+                    </div>
+                    <h3>The Whole Cow</h3>
+                    <p>$99.99</p>
+                    <label for="item-c">Quantity</label>
+                    <input id="item-c" name="item-c" type="number" value="0">
+                </div>
+            </div>
+            <div class="half-container">
+              <div id="shipping">
+                <p>Shipping Information</p>
+                <input id="a" type="radio" name="shipping" value="ship-a"><label for="a">Free 7 Day</label>
+                <br>
+                <input id="b" type="radio" name="shipping" value="ship-b"><label for="b">$50.00 Over Night</label>
+                <br>
+                <input id="c" type="radio" name="shipping" value="ship-c"><label for="c">$5.00 Three Day</label>
+              </div>
+              <div id="login">
+                <label for="username">Username</label>
+                <input id="username" type="text" name="username" placeholder="username">
+                <label for="password">Password</label>
+                <input id="password" type="password" name="password" placeholder="password">
+              </div>
+            </div>
+            <div id="errors"></div>
+            <div id="action-buttons" class="half-container">
+              <input name="submit" type="submit" value="Submit Purchase">
+              <input name="reset" type="reset" value="reset">
+            </div>
+        </form>
+    </body>
+</html>

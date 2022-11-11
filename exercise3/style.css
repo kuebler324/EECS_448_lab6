@@ -1,0 +1,108 @@
+@charset "utf-8";
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+  background-color: #efefef;
+  font-family: verdana;
+}
+
+#store {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+h1 {
+    display: block;
+    width: 100%;
+    height: 96px;
+    line-height: 96px;
+    text-align: center;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin: 0 auto;
+    border-radius: 8px;
+    padding: 16px;
+    max-width: 200px;
+    height: 300px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+.card h3 {
+  height: 36px;
+  line-height: 36px;
+}
+.card p {
+  height: 16px;
+  line-height: 16px;
+}
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 32px;
+  width: 200px;
+  height: 200px;
+}
+.image-container img {
+  display: block;
+  margin: auto;
+  width: 180px;
+  height: auto;
+}
+.half-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+#shipping, #login {
+  display: block;
+  flex-grow: 1;
+  margin: 24px;
+  border-radius: 8px;
+  padding: 16px;
+  max-width: 50%;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+input, label {
+  display: block;
+}
+input[type="radio"], input[type="radio"] + label {
+  display: inline-block;
+}
+#action-buttons input {
+  display: block;
+  margin: 8px;
+  padding: 2px;
+  background-color: #fff;
+}
+#errors p {
+  text-align: center;
+  color: #c00;
+}
+
+#receipt {
+  display: block;
+  width: 100%;
+}
+#receipt h3 {
+  text-align: center;
+}
+#receipt table {
+  margin: 32px auto 0 auto;
+}
+th, td {
+  width: 160px;
+}
+td:nth-of-type(1), th:nth-of-type(1) {
+  text-align: left;
+}
+td:nth-of-type(2), th:nth-of-type(2) {
+  text-align: right;
+}
