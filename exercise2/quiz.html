@@ -1,1 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Exercise 2 | Quiz</title>
+    </head>
+    <body>
+        <form action="quiz.php" method="post">
+            <div id="questions"></div>
+            <div>
+                <input type="submit" value="Submit Quiz">
+            </div>
+        </form>
+        <script>
+            const $ = a => document.getElementById(a);
+            const createElement = (parent, name, attributes, innerText) => {
+                const element = document.createElement(name);
+                for(const attribute in attributes) {
+                    element.setAttribute(attribute, attributes[attribute]);
+                }
+                if(innerText) {
+                    element.innerText = innerText;
+                }
+                parent.appendChild(element);
+                return element;
+            };
+            function createQuestion(questionNumber, question, answers) {
+                const name = `q${questionNumber}`;
+                const form = $('questions');
+                const div = createElement(form, 'div');
+                createElement(div, 'p', {}, `Question ${questionNumber}: ${question}`);
+                answers.forEach((answer, index) => {
+                    const id = `${name}-${index}`;
+                    createElement(div, 'input', {
+                        type: 'radio',
+                        id: id,
+                        name: name,
+                        value: answer
+                    });
+                    createElement(div, 'label', {
+                        for: id
+                    }, `${'abcdef'.charAt(index)}.) ${answer}`);
+                    
+                    createElement(div, 'br');
+                });
+            }
 
+            createQuestion(1, 'How old am I?', ['10', '12', '14', '16']);
+            createQuestion(2, 'What is my favorite color?', ['red', 'yellow', 'green', 'blue']);
+            createQuestion(3, 'Who is in charge?', ['You', 'Me', 'Them', 'Us']);
+            createQuestion(4, 'What is the best language?', ['php', 'python', 'javascript', 'haskell']);
+            createQuestion(5, 'What is your favorite apple product?', ['Microsoft Teams', 'Microsoft Word', 'Microsoft Excel', 'Microsoft']);
+        </script>
+    </body>
+</html>
